@@ -160,7 +160,7 @@ public class MessageDAO {
 
             PreparedStatement ps = connection.prepareStatement(sql);
 
-            ps.setInt(1, account_id); // posted_by references account_id in the SQL tables
+            ps.setInt(1, account_id); // posted_by references account_id in the SQL tables 
 
             ResultSet rs = ps.executeQuery();
             while(rs.next()){
