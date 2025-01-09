@@ -39,21 +39,14 @@ public class MessageService {
     }
 
     public Message patchMessageByID(int message_id, Message message) {
-        System.out.println(message_id);
-        System.out.println(messageDAO.getMessageByID(message.getMessage_id()));
         if (message.getMessage_text() != "") {
-            System.out.println("Not Empty Text");
             if (message.getMessage_text().length() <= 255) {
-                System.out.println("Character limit not passed");
-                //System.out.println(messageDAO.getMessageByID(message.getMessage_id()));
                 if (messageDAO.getMessageByID(message_id) != null) {
-                    System.out.println("We passed the checks");
                     return messageDAO.patchMessageByID(message_id, message);
                 }
             }
         }
 
-        System.out.println("One of 3 errors");
         return null;
     }
 
